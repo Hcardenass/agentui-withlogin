@@ -70,8 +70,8 @@ export default function Page() {
             key={i}
             className={`p-3 rounded max-w-[70%] ${
               m.de === 'usuario'
-                ? 'ml-auto bg-blue-100 text-black dark:text-white'
-                : 'mr-auto bg-gray-100 text-black dark:text-white'
+                ? 'ml-auto bg-blue-100 text-black'
+                : 'mr-auto bg-gray-100 text-black'
             }`}
           >
             {m.texto}
