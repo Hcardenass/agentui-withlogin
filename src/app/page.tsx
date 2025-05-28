@@ -1,4 +1,3 @@
-// src/app/page.tsx
 'use client';
 
 import { useSession, signIn, signOut } from 'next-auth/react';
@@ -16,11 +15,10 @@ export default function Page() {
   if (!session) {
     return (
       <div className="h-full flex items-center justify-center">
-         <button
+        <button
           onClick={() => signIn('google')}
           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2"
         >
-          
           Login con Google
         </button>
       </div>
@@ -31,25 +29,39 @@ export default function Page() {
   const enviar = async (e: FormEvent) => {
     e.preventDefault();
     if (!msg) return;
+
     setLoading(true);
 
-    const userEmail = session.user?.email ?? '';
-    const res = await fetch(
-      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(msg)}`
-    );
-    const texto = await res.text();
+    // Guardamos el mensaje del usuario en una variable antes de limpiar el input
+    const textoUsuario = msg;
 
-    // Actualizar historial
+    // 1) Añadimos al chat el mensaje del usuario y un placeholder “Generando respuesta”
     setChat((c) => [
       ...c,
-      { de: 'usuario', texto: msg },
-      { de: 'bot',     texto }
+      { de: 'usuario', texto: textoUsuario },
+      { de: 'bot', texto: 'Generando respuesta' }
     ]);
 
+    // Limpiamos el input inmediatamente
     setMsg('');
+
+    // 2) Ejecutamos la petición al backend
+    const userEmail = session.user?.email ?? '';
+    const res = await fetch(
+      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}`
+    );
+    const textoReal = await res.text();
+
+    // 3) Reemplazamos el mensaje “Generando respuesta” por la respuesta real
+    setChat((c) => {
+      const nuevoChat = [...c];
+      // El placeholder siempre será el último elemento
+      nuevoChat[nuevoChat.length - 1] = { de: 'bot', texto: textoReal };
+      return nuevoChat;
+    });
+
     setLoading(false);
   };
-
 
   return (
     <div className="h-full flex flex-col p-4">
@@ -99,5 +111,5 @@ export default function Page() {
         </button>
       </form>
     </div>
-);
+  );
 }
