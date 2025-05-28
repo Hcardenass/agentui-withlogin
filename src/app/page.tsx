@@ -63,7 +63,7 @@ export default function Page() {
     
       setMsg('');
       setLoading(false);
-  };
+    };
 
 
   return (
