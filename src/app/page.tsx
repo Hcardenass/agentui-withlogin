@@ -28,7 +28,8 @@ export default function Page() {
   // Función para enviar mensaje
   const enviar = async (e: FormEvent) => {
     e.preventDefault();
-    if (!msg) return;
+    if (!msg) 
+      return;
 
     setLoading(true);
 
@@ -39,7 +40,7 @@ export default function Page() {
     setChat((c) => [
       ...c,
       { de: 'usuario', texto: textoUsuario },
-      { de: 'bot', texto: 'Generando respuesta' }
+      { de: 'bot', texto: 'Generando la respuesta, por favor espere…' }
     ]);
 
     // Limpiamos el input inmediatamente
