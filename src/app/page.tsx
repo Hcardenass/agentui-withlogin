@@ -54,7 +54,7 @@ export default function Page() {
           ...c.slice(0, -1), // eliminar el último mensaje ("espera...")
           { de: 'bot', texto }
         ]);
-      } catch (err) {
+      } catch {
         setChat((c) => [
           ...c.slice(0, -1),
           { de: 'bot', texto: '❌ Ocurrió un error al obtener la respuesta.' }
