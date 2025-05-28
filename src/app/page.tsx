@@ -31,24 +31,40 @@ export default function Page() {
   const enviar = async (e: FormEvent) => {
     e.preventDefault();
     if (!msg) return;
+  
     setLoading(true);
-
+  
     const userEmail = session.user?.email ?? '';
-    const res = await fetch(
-      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(msg)}`
-    );
-    const texto = await res.text();
-
-    // Actualizar historial
+  
+    // Añadir mensaje temporal del bot
     setChat((c) => [
       ...c,
       { de: 'usuario', texto: msg },
-      { de: 'bot',     texto }
+      { de: 'bot', texto: 'Generando la respuesta, por favor esperes...' }
     ]);
-
+  
+    try {
+      const res = await fetch(
+        `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(msg)}`
+      );
+      const texto = await res.text();
+  
+      // Reemplazar el mensaje temporal del bot con la respuesta real
+      setChat((c) => [
+        ...c.slice(0, -1), // eliminar el último mensaje ("espera...")
+        { de: 'bot', texto }
+      ]);
+    } catch (err) {
+      setChat((c) => [
+        ...c.slice(0, -1),
+        { de: 'bot', texto: '❌ Ocurrió un error al obtener la respuesta.' }
+      ]);
+    }
+  
     setMsg('');
     setLoading(false);
-  };
+};
+
 
   return (
     <div className="h-full flex flex-col p-4">
