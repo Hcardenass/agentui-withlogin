@@ -76,9 +76,8 @@ export default function Page() {
         <button
           onClick={() => signOut()}
           className="bg-black text-white text-sm px-3 py-1 rounded 
-                     hover:bg-gray-800 hover:shadow-md hover:scale-105 
-                     transition-all duration-200 ease-in-out
-                     active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-500"
+             hover:bg-gray-800 hover:shadow-md 
+             active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-500"
         >
           Cerrar sesión
         </button>
