@@ -13,7 +13,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="flex h-screen bg-gray-50">
         <AuthProvider>
           <aside className="w-64 bg-neutral-900 text-white p-6">
-            <h1 className="text-2xl font-bold mb-4">TecnoQuery🤖</h1>
+            <h1 className="text-2xl font-bold mb-4">🤖 TecnoQuery</h1>
             <p className="text-sm leading-relaxed">
               Este agente inteligente puede:
             </p>
