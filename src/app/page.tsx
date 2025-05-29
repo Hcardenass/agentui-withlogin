@@ -2,7 +2,7 @@
 
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
-//import { User, Robot, Loader } from 'lucide-react';
+import { User, Robot, Loader } from 'lucide-react';
 
 type Mensaje = { de: 'usuario' | 'bot'; texto: string };
 
