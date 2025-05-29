@@ -82,7 +82,7 @@ export default function Page() {
         {chat.map((m, i) => (
           <div
             key={i}
-            className={`p-3 rounded max-w-[70%] ${
+            className={`p-3 rounded max-w-[70%] whitespace-pre-wrap ${
               m.de === 'usuario'
                 ? 'ml-auto bg-blue-100 text-black'
                 : 'mr-auto bg-gray-100 text-black'
