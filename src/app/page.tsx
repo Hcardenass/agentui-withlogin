@@ -18,8 +18,8 @@ export default function Page() {
       <div className="h-full flex items-center justify-center">
         <button
           onClick={() => signIn('google')}
-          //className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2"
-          className="btn-hover-dark"
+          className="bg-black text-white text-sm px-3 py-1 rounded 
+             hover:bg-gray-800 hover:shadow-md transition-all duration-200"
         >
           Login con Google
         </button>
