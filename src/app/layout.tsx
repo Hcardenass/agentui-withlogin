@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import AuthProvider from './AuthProvider';
 
 export const metadata = {
-  title: '🤖TecnoQuery',
+  title: '🤖 TecnoQuery',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
