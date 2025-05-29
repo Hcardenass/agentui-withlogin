@@ -80,18 +80,38 @@ export default function Page() {
       </header>
 
       <div className="flex-1 overflow-y-auto space-y-3 pb-4">
-        {chat.map((m, i) => (
-          <div
-            key={i}
-            className={`p-3 rounded max-w-[70%] whitespace-pre-wrap ${
-              m.de === 'usuario'
-                ? 'ml-auto bg-blue-100 text-black'
-                : 'mr-auto bg-gray-100 text-black'
-            }`}
-          >
-            {m.texto}
-          </div>
-        ))}
+        {chat.map((m, i) => {
+          const esPlaceholderBot =
+            m.de === 'bot' &&
+            loading &&
+            i === chat.length - 1 &&
+            m.texto.includes('Generando');
+          return (
+            <div
+              key={i}
+              className={`p-3 rounded max-w-[70%] whitespace-pre-wrap ${
+                m.de === 'usuario'
+                  ? 'ml-auto bg-blue-100 text-black'
+                  : 'mr-auto bg-gray-100 text-black'
+              }`}
+            >
+              {/* Icono de persona o robot */}
+              {m.de === 'usuario' ? (
+                <User className="w-5 h-5 text-blue-600" />
+              ) : (
+                <Robot className="w-5 h-5 text-gray-600" />
+              )}
+
+              {/* Si es placeholder de bot en loading, mostramos el spinner */}
+              {esPlaceholderBot && (
+                <Loader className="w-4 h-4 text-gray-600 animate-spin" />
+              )}
+
+              {/* Texto del mensaje */}
+              <span>{m.texto}</span>
+            </div>
+          );
+        })}
       </div>
 
       <form onSubmit={enviar} className="mt-2 flex gap-2">
