@@ -22,10 +22,21 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    background: var(--background);
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  button {
+    @apply transition-all duration-200 ease-in-out;
+  }
 }
 
+@layer utilities {
+  .btn-hover-effect {
+    @apply hover:shadow-md hover:scale-105 active:scale-95 transition-all duration-200 ease-in-out;
+  }
+}
 
