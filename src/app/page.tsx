@@ -2,7 +2,7 @@
 
 import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
-
+import { FaUser, FaRobot, FaSpinner } from 'react-icons/fa';
 
 type Mensaje = { de: 'usuario' | 'bot'; texto: string };
 
