@@ -19,7 +19,8 @@ export default function Page() {
         <button
           onClick={() => signIn('google')}
           className="bg-black text-white text-sm px-3 py-1 rounded 
-             hover:bg-gray-800 hover:shadow-md transition-all duration-200"
+             hover:bg-gray-800 hover:shadow-md hover:scale-105 
+             active:scale-95 focus:outline-none focus:ring-2 focus:ring-gray-500"
         >
           Login con Google
         </button>
