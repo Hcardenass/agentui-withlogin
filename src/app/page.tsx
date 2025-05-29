@@ -73,7 +73,7 @@ export default function Page() {
         </div>
         <button
           onClick={() => signOut()}
-          className="text-sm text-gray-600 hover:underline"
+          className="bg-black text-white text-sm px-3 py-1 rounded hover:opacity-80"
         >
           Cerrar sesión
         </button>
