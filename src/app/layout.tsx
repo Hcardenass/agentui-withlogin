@@ -12,8 +12,16 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="es">
       <body className="flex h-screen bg-gray-50">
         <AuthProvider>
-          <aside className="w-64 bg-neutral-900 text-white p-4 text-xl font-semibold">
-            TecnoQuery🤖
+          <aside className="w-64 bg-neutral-900 text-white p-6">
+            <h1 className="text-2xl font-bold mb-4">TecnoQuery🤖</h1>
+            <p className="text-sm leading-relaxed">
+              Este agente inteligente puede:
+            </p>
+            <ul className="mt-3 text-sm space-y-2">
+              <li>🔍 Buscar información de 3 modelos de datos</li>
+              <li>📄🌐 Búsqueda Híbrida RAG</li>
+              <li>🔈 Enviar resultados generados por audios de WhatsApp</li>
+            </ul>
           </aside>
           <main className="flex-1 overflow-auto bg-gray-100 p-6">
             {children}
