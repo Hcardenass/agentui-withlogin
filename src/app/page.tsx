@@ -124,11 +124,11 @@ export default function Page() {
             >
               {/* Icono de persona o robot */}
               {m.de === 'usuario' ? (
-                <div className="flex-shrink-0 w-5 h-5">
+                <div className="flex-shrink-0">
                   <FaUser className="w-5 h-5 text-blue-600" />
                 </div>
               ) : (
-                <div className="flex-shrink-0 w-5 h-5">
+                <div className="flex-shrink-0">
                   <FaRobot className="w-5 h-5 text-gray-600" />
                 </div>
               )}
