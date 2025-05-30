@@ -88,7 +88,7 @@ export default function Page() {
 
       {/* Select para elegir modelo */}
       <div className="mb-4">
-        <label htmlFor="modelo-select" className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">
+        <label htmlFor="modelo-select" className="block mb-1 font-semibold text-gray-800 dark:text-gray-300">
           Selecciona el modelo analítico:
         </label>
         <select
