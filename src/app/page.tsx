@@ -12,6 +12,9 @@ export default function Page() {
   const [msg, setMsg] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
 
+  // Estado para el modelo seleccionado
+  const [selectedModel, setSelectedModel] = useState<string>('Analytic_Model_Comercial');
+
   // Si no hay sesión, mostramos botón de login
   if (!session) {
     return (
@@ -52,7 +55,7 @@ export default function Page() {
     // 2) Ejecutamos la petición al backend
     const userEmail = session.user?.email ?? '';
     const res = await fetch(
-      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}`
+      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}&view_name=${encodeURIComponent(selectedModel)}`
     );
     const textoReal = await res.text();
 
@@ -82,6 +85,24 @@ export default function Page() {
           Cerrar sesión
         </button>
       </header>
+
+      {/* Select para elegir modelo */}
+      <div className="mb-4">
+        <label htmlFor="modelo-select" className="block mb-1 font-semibold text-gray-700 dark:text-gray-300">
+          Selecciona el modelo analítico:
+        </label>
+        <select
+          id="modelo-select"
+          value={selectedModel}
+          onChange={(e) => setSelectedModel(e.target.value)}
+          className="w-full rounded border px-3 py-2 bg-white text-black dark:bg-zinc-800 dark:text-white"
+          disabled={loading}
+        >
+          <option value="Analytic_Model_Comercial">Modelo Comercial</option>
+          <option value="Analytic_Model_Finanzas">Modelo Finanzas</option>
+          <option value="Analytic_Model_Produccion">Modelo Producción</option>
+        </select>
+      </div>
 
       <div className="flex-1 overflow-y-auto space-y-3 pb-4">
         {chat.map((m, i) => {
