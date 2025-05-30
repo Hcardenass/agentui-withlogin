@@ -128,7 +128,7 @@ export default function Page() {
                   <FaUser className="w-5 h-5 text-blue-600" />
                 </div>
               ) : (
-                <div className=""flex-shrink-0 w-5 h-5"">
+                <div className="flex-shrink-0 w-5 h-5">
                   <FaRobot className="w-5 h-5 text-gray-600" />
                 </div>
               )}
