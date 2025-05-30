@@ -74,7 +74,7 @@ export default function Page() {
     <div className="h-full flex flex-col p-4">
       <header className="mb-4 flex justify-between items-center">
         <div>
-          <span className="font-medium">¡Hola, {session.user?.email}!</span>
+          <span className="font-medium">¡Hola, {session.user?.name?.split(' ')[0] || 'Usuario'}!</span>
         </div>
         <button
           onClick={() => signOut()}
