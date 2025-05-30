@@ -116,7 +116,7 @@ export default function Page() {
           return (
             <div
               key={i}
-              className={`p-3 rounded max-w-[70%] whitespace-pre-wrap flex items-center gap-2 ${
+              className={`p-3 rounded max-w-[70%] whitespace-pre-wrap flex items-start gap-2 ${
                 m.de === 'usuario'
                   ? 'ml-auto bg-blue-100 text-black'
                   : 'mr-auto bg-gray-100 text-black'
@@ -124,11 +124,11 @@ export default function Page() {
             >
               {/* Icono de persona o robot */}
               {m.de === 'usuario' ? (
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 w-5 h-5">
                   <FaUser className="w-5 h-5 text-blue-600" />
                 </div>
               ) : (
-                <div className="flex-shrink-0">
+                <div className=""flex-shrink-0 w-5 h-5"">
                   <FaRobot className="w-5 h-5 text-gray-600" />
                 </div>
               )}
