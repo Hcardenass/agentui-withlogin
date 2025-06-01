@@ -119,7 +119,7 @@ export default function Page() {
               className={`p-3 rounded max-w-[70%] whitespace-pre-wrap flex items-start gap-2 ${
                 m.de === 'usuario'
                   ? 'ml-auto bg-gray-200 text-gray-800'
-                  : 'mr-auto bg-teal-300 text-black'
+                  : 'mr-auto bg-teal-300 text-white'
               }`}
             >
               {/* Icono de persona o robot */}
