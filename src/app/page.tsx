@@ -53,11 +53,12 @@ export default function Page() {
     setMsg('');
 
     // 2) Ejecutamos la petición al backend
-    const userEmail = session.user?.email ?? '';
     const res = await fetch(
-      `/FlaskWeb/agentsql?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}&view_name=${encodeURIComponent(selectedModel)}`
+    'http://dms.tecnofil.com.pe/FlaskWeb/agentsql'
+      + '?idagente=' + encodeURIComponent(userEmail)
+      + '&msg=' + encodeURIComponent(textoUsuario)
+      + '&view_name=' + encodeURIComponent(selectedModel)
     );
-    const textoReal = await res.text();
 
     // 3) Reemplazamos el mensaje “Generando respuesta” por la respuesta real
     setChat((c) => {
