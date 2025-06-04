@@ -99,7 +99,7 @@ export default function Page() {
           disabled={loading}
         >
           <option value="Analytic_Model_Comercial">Modelo Comercial</option>
-          <option value="Analytic_Model_PagosDeuda">Modelo Pagos/Deuda</option>
+          <option value="Model_Detalle_Pedido">Detalle de Pedidos</option>
         </select>
       </div>
 
