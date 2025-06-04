@@ -55,7 +55,7 @@ export default function Page() {
     // 2) Ejecutamos la petición al backend
     const userEmail = session.user?.email ?? '';
     const res = await fetch(
-      `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}&view_name=${encodeURIComponent(selectedModel)}`
+      `/FlaskWeb/agentsql?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}&view_name=${encodeURIComponent(selectedModel)}`
     );
     const textoReal = await res.text();
 
