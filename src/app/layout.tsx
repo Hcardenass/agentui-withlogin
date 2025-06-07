@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
+      <body className="min-h-screen h-screen flex bg-gray-50">
         <AuthProvider>
           {/* Sidebar: hidden on mobile, shown on md+ */}
           <aside className="hidden md:block w-64 bg-neutral-900 text-white p-6 flex-shrink-0">
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {/* Banner/top bar on mobile */}
           <div className="md:hidden w-full bg-neutral-900 text-white px-4 py-3 flex items-center">
             <span className="text-lg font-bold mr-2">🤖 TecnoAIgent</span>
-            <span className="text-xs">Tu agente comercial inteligente</span>
+            <span className="text-xs">Tu asistente inteligente</span>
           </div>
           <main className="flex-1 overflow-auto bg-gray-100 p-4 md:p-6 flex flex-col">
             {children}
