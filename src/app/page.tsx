@@ -18,7 +18,7 @@ export default function Page() {
   // Si no hay sesión, mostramos botón de login
   if (!session) {
     return (
-      <div className="h-full flex items-center justify-center">
+      <div className="h-full flex flex-col max-w-2xl mx-auto w-full">
         <button
           onClick={() => signIn('google')}
           className="bg-black text-white text-sm px-3 py-1 rounded 
@@ -144,7 +144,7 @@ export default function Page() {
         })}
       </div>
 
-      <form onSubmit={enviar} className="mt-2 flex gap-2">
+      <form onSubmit={enviar} className="mt-2 flex gap-2 sticky bottom-0 bg-gray-100 py-2 z-10">
         <input
           className="flex-1 rounded border px-3 py-2 bg-white text-black placeholder-gray-500
              dark:bg-zinc-800 dark:text-white dark:placeholder-gray-400"
