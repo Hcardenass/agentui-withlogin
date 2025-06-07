@@ -10,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es">
-      <body className="min-h-screen h-screen flex bg-gray-50">
+      <body className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
         <AuthProvider>
           {/* Sidebar: hidden on mobile, shown on md+ */}
           <aside className="hidden md:block w-64 bg-neutral-900 text-white p-6 flex-shrink-0">
