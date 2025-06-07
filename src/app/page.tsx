@@ -18,7 +18,7 @@ export default function Page() {
   // Si no hay sesión, mostramos botón de login
   if (!session) {
     return (
-      <div className="h-full flex flex-col max-w-2xl mx-auto w-full">
+      <div className="flex items-center justify-center min-h-screen h-full w-full">
         <button
           onClick={() => signIn('google')}
           className="bg-black text-white text-sm px-3 py-1 rounded 
