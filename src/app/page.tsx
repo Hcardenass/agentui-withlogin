@@ -4,7 +4,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
 import { FaUser, FaRobot, FaSpinner } from 'react-icons/fa';
 
-type Mensaje = { de: 'usuario' | 'bot'; texto: string };
+type Mensaje = { de: 'usuario' | 'bot'; texto: string; url_mp3?: string };
 
 export default function Page() {
   const { data: session } = useSession();
@@ -57,13 +57,13 @@ export default function Page() {
     const res = await fetch(
       `/api/agent?idagente=${encodeURIComponent(userEmail)}&msg=${encodeURIComponent(textoUsuario)}&view_name=${encodeURIComponent(selectedModel)}`
     );
-    const textoReal = await res.text();
-
+    //const textoReal = await res.text();
+    const data = await res.json();
     // 3) Reemplazamos el mensaje “Generando respuesta” por la respuesta real
     setChat((c) => {
       const nuevoChat = [...c];
       // El placeholder siempre será el último elemento
-      nuevoChat[nuevoChat.length - 1] = { de: 'bot', texto: textoReal };
+      nuevoChat[nuevoChat.length - 1] = { de: 'bot', texto: data.respuesta, url_mp3: data.url_mp3 || undefined };
       return nuevoChat;
     });
 
@@ -136,14 +136,18 @@ export default function Page() {
               {esPlaceholderBot && (
                 <FaSpinner className="w-4 h-4 text-gray-600 animate-spin" />
               )}
-            
-              {/* Texto del mensaje */}
-              <span>{m.texto}</span>
+              <div>
+                <span>{m.texto}</span>              
+                {m.url_mp3 && (
+                  <audio controls className="mt-2 max-w-full">
+                    <source src={m.url_mp3} type="audio/mp3" />
+                    Tu navegador no soporta audio.
+                  </audio>
+                )}
+              </div>
             </div>
           );
-        })}
-      </div>
-
+      })}
       <form onSubmit={enviar} className="mt-2 flex gap-2 sticky bottom-0 bg-gray-100 py-2 z-10">
         <input
           className="flex-1 rounded border px-3 py-2 bg-white text-black placeholder-gray-500
