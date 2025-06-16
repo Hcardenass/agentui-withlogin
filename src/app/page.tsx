@@ -147,7 +147,7 @@ export default function Page() {
               </div>
             </div>
           );
-      })}
+        })}
       <form onSubmit={enviar} className="mt-2 flex gap-2 sticky bottom-0 bg-gray-100 py-2 z-10">
         <input
           className="flex-1 rounded border px-3 py-2 bg-white text-black placeholder-gray-500
