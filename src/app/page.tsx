@@ -152,10 +152,11 @@ export default function Page() {
                       className="rounded border shadow max-w-xs sm:max-w-sm"
                       style={{ maxHeight: '320px', objectFit: 'contain' }}
                     />
-                 </div>
-              )}
+                  </div>
+               )}
             </div>
-          );
+          </div>
+         );   
         })}
       </div>
       <form onSubmit={enviar} className="mt-2 flex gap-2 sticky bottom-0 bg-gray-100 py-2 z-10">
