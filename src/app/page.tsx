@@ -4,7 +4,7 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useState, FormEvent } from 'react';
 import { FaUser, FaRobot, FaSpinner } from 'react-icons/fa';
 
-type Mensaje = { de: 'usuario' | 'bot'; texto: string; url_mp3?: string };
+type Mensaje = { de: 'usuario' | 'bot'; texto: string; url_mp3?: string; url_png?: string };
 
 export default function Page() {
   const { data: session } = useSession();
@@ -63,7 +63,7 @@ export default function Page() {
     setChat((c) => {
       const nuevoChat = [...c];
       // El placeholder siempre será el último elemento
-      nuevoChat[nuevoChat.length - 1] = { de: 'bot', texto: data.respuesta, url_mp3: data.url_mp3 || undefined };
+      nuevoChat[nuevoChat.length - 1] = { de: 'bot', texto: data.respuesta, url_mp3: data.url_mp3 || undefined, url_png: data.url_png || undefined };
       return nuevoChat;
     });
 
@@ -144,7 +144,16 @@ export default function Page() {
                     Tu navegador no soporta audio.
                   </audio>
                 )}
-              </div>
+                {m.url_png && (
+                  <div className="mt-2">
+                    <img
+                      src={m.url_png}
+                      alt="Gráfico generado"
+                      className="rounded border shadow max-w-xs sm:max-w-sm"
+                      style={{ maxHeight: '320px', objectFit: 'contain' }}
+                    />
+                 </div>
+              )}
             </div>
           );
         })}
