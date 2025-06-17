@@ -19,8 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               Este agente inteligente puede:
             </p>
             <ul className="mt-3 text-sm space-y-2">
-              <li>🔍 Buscar información de datos comerciales</li>
-              <li>🔈 Enviar audios de los resultados por WhatsApp</li>
+              <li>🔍 Buscar información de datos comerciales y pedidos</li>
+              <li>📊 Generar gráficas</li>
+              <li>🔈 Responder con audios</li>
+              <li>🧠 Recordar tu conversación</li>
             </ul>
           </aside>
           {/* Banner/top bar on mobile */}
