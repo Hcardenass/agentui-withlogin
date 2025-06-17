@@ -137,7 +137,9 @@ export default function Page() {
                 <FaSpinner className="w-4 h-4 text-gray-600 animate-spin" />
               )}
               <div>
-                <span>{m.texto}</span>              
+                {(!m.url_png || (m.texto.trim() !== m.url_png.trim())) && (
+                   <span>{m.texto}</span>
+                )}            
                 {m.url_mp3 && (
                   <audio controls className="mt-2 max-w-full">
                     <source src={m.url_mp3} type="audio/mp3" />
