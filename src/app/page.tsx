@@ -100,8 +100,6 @@ export default function Page() {
         >
           <option value="Analytic_Model_Comercial">Modelo Comercial</option>
           <option value="Model_Detalle_Pedido">Detalle Pedidos</option>
-          <option>Modelo Producción</option>
-          <option>Modelo Supply</option>
         </select>
       </div>
 
