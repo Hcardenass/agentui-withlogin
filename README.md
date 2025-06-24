@@ -122,11 +122,11 @@ Solo debes configurar las variables de entorno mencionadas anteriormente.
 Gracias por revisar este repositorio.  
 Si te interesa colaborar, aprender más o invitarme a dar una charla, puedes escribirme o seguirme en LinkedIn:
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Miguel%20Cotrina-blue?logo=linkedin&style=flat-square)](https://www.linkedin.com/in/mcotrina/)
+
 
 ---
 
 ## 🙌 Autor
 
-**Miguel Ángel Cotrina Espinoza**  
+
 
