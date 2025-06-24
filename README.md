@@ -122,11 +122,6 @@ Solo debes configurar las variables de entorno mencionadas anteriormente.
 Gracias por revisar este repositorio.  
 Si te interesa colaborar, aprender más o invitarme a dar una charla, puedes escribirme o seguirme en LinkedIn:
 
-
-
----
-
-## 🙌 Autor
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Adrian%20Cárdenas-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hector-cardenas-camacho-197101169/)
 
 
