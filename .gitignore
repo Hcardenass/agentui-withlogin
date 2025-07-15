@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# No subir documentación de despliegue manual
+README_DEPLOY_CLOUD_RUN.md
