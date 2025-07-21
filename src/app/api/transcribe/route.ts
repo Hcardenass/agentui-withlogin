@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
     // La URL de tu backend de Flask. Asegúrate de que sea accesible.
     // Si ejecutas Docker o estás en un entorno de producción, esto podría cambiar.
-    const flaskUrl = 'http://127.0.0.1:5000/transcribe';
+    const flaskUrl = 'http://host.docker.internal:5000/transcribe';
 
     const flaskResponse = await fetch(flaskUrl, {
       method: 'POST',
