@@ -5,7 +5,7 @@ export async function GET(request: NextRequest) {
   // recrea la URL de tu API remota usando los mismos parámetros
   // const url = `https://dms.tecnofil.com.pe/FlaskWeb/agentsql?`   `http://127.0.0.1:5000/agentsql?` 
   //const url = `http://host.docker.internal:5000/agentsql?` +
-  const url = `http://host.docker.internal:5000/agentsql?` +
+  const url = `https://dms.tecnofil.com.pe/FlaskWeb/agentsql?` +
     new URL(request.url).searchParams.toString();
 
   // forward
